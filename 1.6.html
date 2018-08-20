@@ -7,6 +7,17 @@
     ':35729/livereload.js?snipver=1"></' + 'script>')
   </script>
   <script>
+    // add hello world div
+    d3.select('body').append('div')
+      .style('border', '1px solid black')
+      .html('hello world');
+
+    d3.select('div')
+      .style('background-color', '24px')
+      .style('font-size', '24px')
+      .attr('id', 'newDiv')
+      .attr('class', 'd3div')
+      .on('click', () => console.log('You clicked a div'));
   </script>
 </body>
 </html>
