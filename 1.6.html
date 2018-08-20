@@ -19,20 +19,15 @@
     ':35729/livereload.js?snipver=1"></' + 'script>')
   </script>
   <script>
-    d3.select('.svg')
-      .append('line')
-      .attr('x1', 20)
-      .attr('y1', 20)
-      .attr('x2', 400)
-      .attr('y2', 400)
-      .style('stroke', 'black')
-      .style('stroke-width', '2px');
+    // set up elements
 
     d3.select('.svg')
       .append('text')
+      .attr('id', 'a')
       .attr('x', 20)
       .attr('y', 20)
-      .text('HELLO');
+      .style('opacity', 0)
+      .text('HELLO WORLD');
 
     d3.select('.svg')
       .append('circle')
@@ -50,9 +45,17 @@
 
     d3.select('.svg')
       .append('text')
+      .attr('id', 'b')
       .attr('x', 400)
       .attr('y', 400)
-      .text('WORLD');
+      .style('opacity', 0)
+      .text('Uh, hi.');
+
+    // reveal text
+
+    d3.select('#a').transition().delay(1000).style('opacity', 1);
+
+    d3.select('#b').transition().delay(1000).style('opacity', .75);
   </script>
 </body>
 </html>
