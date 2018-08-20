@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+    .svg {
+      width: 500px;
+      height: 500px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
 <body>
+  <div id="vizcontainer">
+    <svg class="svg" />
+  </div>
   <script src="https://unpkg.com/d3@5.5.0/dist/d3.js"></script>
   <script>
     document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
     ':35729/livereload.js?snipver=1"></' + 'script>')
   </script>
   <script>
-    // add hello world div
-    d3.select('body').append('div')
-      .style('border', '1px solid black')
-      .html('hello world');
+    d3.select('.svg')
+      .append('line')
+      .attr('x1', 20)
+      .attr('y1', 20)
+      .attr('x2', 400)
+      .attr('y2', 400)
+      .style('stroke', 'black')
+      .style('stroke-width', '2px');
 
-    d3.select('div')
-      .style('background-color', '24px')
-      .style('font-size', '24px')
-      .attr('id', 'newDiv')
-      .attr('class', 'd3div')
-      .on('click', () => console.log('You clicked a div'));
+    d3.select('.svg')
+      .append('text')
+      .attr('x', 20)
+      .attr('y', 20)
+      .text('HELLO');
+
+    d3.select('.svg')
+      .append('circle')
+      .attr('r', 20)
+      .attr('cx', 20)
+      .attr('cy', 20)
+      .style('fill', 'red');
+
+    d3.select('.svg')
+      .append('circle')
+      .attr('r', 100)
+      .attr('cx', 400)
+      .attr('cy', 400)
+      .style('fill', 'lightblue');
+
+    d3.select('.svg')
+      .append('text')
+      .attr('x', 400)
+      .attr('y', 400)
+      .text('WORLD');
   </script>
 </body>
 </html>
